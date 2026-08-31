@@ -51,3 +51,6 @@ console.log(vampiro.vida)
 
 console.log("Morgana foi derrotada pelo Rapix")
    
+druida.causaDano(mago)
+mago.curar(15)
+mago.curar(20)
