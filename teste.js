@@ -54,3 +54,41 @@ console.log("Morgana foi derrotada pelo Rapix")
 druida.causaDano(mago)
 mago.curar(15)
 mago.curar(20)
+
+class Guerreiro extends Personagem {
+    golpePesado(personagem){
+        personagem.recebeDano(this.ataque * 2)
+    }
+   }
+   class Mago extends Personagem {
+bolaDeFogo(personagem){
+personagem.recebeDano(this.ataque + 15)
+    }
+  }
+class Arqueiro extends Personagem {
+tiroPreciso(personagem){
+personagem.recebeDano(this.ataque + 10)
+   }
+ }
+class Protagonista extends Personagem {
+    corteInvisivel(personagem){
+          personagem.recebeDano(this.ataque + 50)
+    }
+}
+
+
+
+
+
+
+
+
+
+guerreiro.golpePesado(mago)
+mago.bolaDeFogo(guerreiro)
+arqueiro.tiroPreciso(barbaro)
+protagonista.corteInvisivel(antagonista)
+mago.mostrarStatus()
+guerreiro.mostrarStatus()
+barbaro.mostrarStatus()
+antagonista.mostrarStatus()

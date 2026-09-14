@@ -62,6 +62,14 @@ class Protagonista extends Personagem {
           personagem.recebeDano(this.ataque + 50)
     }
 }
+
+class Teste extends Personagem {
+     constructor(nome){
+        super(nome, 80, 35, 15)
+     }
+} 
+
+const Rafael = new Teste("Rafael")
 const druida = new Personagem ("Kode", 70, 30, 8)
 const guerreiro = new Guerreiro("Thorin", 60, 20, 15)
 const mago = new Mago("Gandalfe", 60, 35, 5)
@@ -73,11 +81,35 @@ const ninja = new Personagem("Kaito", 80, 35, 5)
 const vampiro = new Personagem("Dracula", 120, 15, 5) 
 const antagonista = new Personagem ("Tenebris", 150, 50, 25)
 
-guerreiro.golpePesado(mago)
-mago.bolaDeFogo(guerreiro)
-arqueiro.tiroPreciso(barbaro)
-protagonista.corteInvisivel(antagonista)
-mago.mostrarStatus()
-guerreiro.mostrarStatus()
-barbaro.mostrarStatus()
-antagonista.mostrarStatus()
+const personagens = [
+     Rafael,
+     druida,
+     guerreiro,
+     mago,
+     arqueiro,
+     protagonista,
+     barbaro,
+     feiticeira,
+     ninja,
+     vampiro,
+     antagonista
+]
+
+personagens.forEach(function(personagem){
+personagem.mostrarStatus()
+})
+
+let turno = 1
+let jogadorAtual = 0
+
+function proximoTurno(){
+    
+turno = turno + 1
+jogadorAtual = jogadorAtual === 0 ? 1 : 0
+}
+
+proximoTurno()
+proximoTurno()
+
+console.log(turno)
+console.log(jogadorAtual)
