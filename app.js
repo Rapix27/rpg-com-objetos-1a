@@ -109,6 +109,21 @@ jogadorAtual = jogadorAtual === 0 ? 1 : 0
 }
 
 const vidaGuerreiro = document.getElementById("vidaGuerreiro")
-
 vidaGuerreiro.innerText = guerreiro.vida
+const ataqueGuerreiro = document.getElementById("ataque-Guerreiro")
+ataqueGuerreiro.innerText = guerreiro.ataque
+const guerreiroAtacar = document.getElementById("guerreiro-atacar")
+guerreiroAtacar.addEventListener ("click", () => {
+     guerreiro.causaDano(mago)
+     vidaMago.innerText = mago.vida
+})
 
+const vidaMago = document.getElementById("vidaMago")
+vidaMago.innerText = mago.vida
+const ataqueMago = document.getElementById("ataque-mago")
+ataqueMago.innerText = mago.ataque
+const magoAtacar = document.getElementById("mago-atacar")
+magoAtacar.addEventListener ("click", () => {
+     mago.causaDano(guerreiro)
+     vidaGuerreiro.innerText = guerreiro.vida
+})
